@@ -2,6 +2,8 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    ofSetFrameRate(60);
+    ofBackground(0, 0, 0);
 
 }
 
@@ -12,6 +14,18 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+
+    ofSetColor(255); 
+    
+    float time = ofGetElapsedTimef(); 
+    int width = ofGetWidth(); 
+    int height = ofGetHeight(); 
+
+    
+    for (int x = 0; x < width; x += 5) {
+        float y = height / 2 + sin(x * 0.01 + time) * 100; 
+        ofDrawCircle(x, y, 2); 
+    }
 
 }
 //--------------------------------------------------------------
